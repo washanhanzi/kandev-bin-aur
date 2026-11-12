@@ -1,0 +1,4 @@
+/pkg/
+/src/
+/*.pkg.tar.*
+/kandev-*-linux-*-full.tar.gz
