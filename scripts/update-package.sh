@@ -41,7 +41,7 @@ if command -v makepkg >/dev/null; then
   (cd "$workdir" && makepkg --printsrcinfo) > "$workdir/.SRCINFO"
 else
   docker run --rm --user "$(id -u):$(id -g)" \
-    --volume "$workdir:/pkg:ro" --workdir /pkg archlinux:base \
+    --volume "$workdir:/pkg" --workdir /pkg archlinux:base \
     makepkg --printsrcinfo > "$workdir/.SRCINFO"
 fi
 cp "$workdir/PKGBUILD" "$workdir/.SRCINFO" .
